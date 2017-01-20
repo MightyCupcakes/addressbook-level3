@@ -51,10 +51,8 @@ public class LogicTest {
     @Test
     public void execute_invalid() throws Exception {
         String invalidCommand = "       ";
-       // assertCommandBehavior(invalidCommand,
-       //         String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));
         assertCommandBehavior(invalidCommand,
-               String.format(MESSAGE_INVALID_COMMAND_FORMAT, ""));
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));
     }
 
     /**
