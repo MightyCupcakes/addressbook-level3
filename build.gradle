@@ -26,4 +26,12 @@ compileJava {
     targetCompatibility = 1.8
 }
 
+test {
+    if (System.env.'CI') {
+       beforeTest { descriptor ->
+           logger.lifecycle('Running test: ' + descriptor)
+       }
+    }
+}
+
 defaultTasks 'clean', 'test'
