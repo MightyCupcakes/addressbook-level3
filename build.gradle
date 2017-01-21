@@ -34,4 +34,8 @@ test {
     }
 }
 
+task wrapper(type: Wrapper) {
+   gradleVersion = '2.12'
+}
+
 defaultTasks 'clean', 'test'
