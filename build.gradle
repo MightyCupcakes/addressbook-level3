@@ -27,15 +27,15 @@ compileJava {
 }
 
 test {
-    if (System.env.'CI') {
+    logToTravis()
+}
+
+def logToTravis() {
+   if (System.env.'CI') {
        beforeTest { descriptor ->
            logger.lifecycle('Running test: ' + descriptor)
        }
-    }
-}
-
-task wrapper(type: Wrapper) {
-   gradleVersion = '2.12'
+    } 
 }
 
 defaultTasks 'clean', 'test'
